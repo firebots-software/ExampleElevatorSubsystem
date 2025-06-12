@@ -37,12 +37,12 @@ public class ElevatorSubsystem extends SubsystemBase {
     }
 
     public double getHeight() {
-        return motor.getRotorPosition().getValue() / kRotationsPerMeter;
+        return motor.getRotorPosition().getValueAsDouble() / kRotationsPerMeter;
     }
 
     // Sets the encoder to read 0
     public void zeroEncoder() {
-        motor.getRotorPosition().set(0.0);
+        motor.setPosition(0.0);
     }
 
     public boolean isAtTargetHeight(double toleranceMeters) {
